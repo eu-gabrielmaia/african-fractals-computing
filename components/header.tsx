@@ -5,13 +5,14 @@ import { useState } from "react";
 import { Menu, X } from "lucide-react";
 
 const links = [
-  { to: "/", label: "Início" },
-  { to: "/historia", label: "História" },
-  { to: "/galeria", label: "Galeria" },
-  { to: "/linha-do-tempo", label: "Linha do Tempo" },
-  { to: "/computacao", label: "Computação" },
-  { to: "/visualizador", label: "Visualizador" },
-  { to: "/referencias", label: "Referências" },
+  { href: "/introducao", label: "Introdução" },
+  { href: "/historia", label: "História" },
+  { href: "/contextualizacao", label: "Contextualização" },
+  { href: "/computacao", label: "Computação" },
+  { href: "/linha-do-tempo", label: "Linha do Tempo" },
+  { href: "/galeria", label: "Galeria" },
+  { href: "/visualizador", label: "Visualizador" },
+  { href: "/referencias", label: "Referências" },
 ] as const;
 
 export function Header() {
@@ -30,8 +31,8 @@ export function Header() {
           <nav className="hidden lg:flex items-center gap-1">
             {links.map((l) => (
               <Link
-                key={l.to}
-                href={l.to}
+                key={l.href}
+                href={l.href}
                 className="px-3 py-2 text-sm text-foreground/70 hover:text-foreground transition-colors data-[status=active]:text-primary data-[status=active]:font-medium"
               >
                 {l.label}
@@ -54,8 +55,8 @@ export function Header() {
           <div className="mx-auto max-w-7xl px-5 py-3 flex flex-col">
             {links.map((l) => (
               <Link
-                key={l.to}
-                href={l.to}
+                key={l.href}
+                href={l.href}
                 onClick={() => setOpen(false)}
                 className="py-3 text-sm text-foreground/80 border-b border-border/40 last:border-0 data-[status=active]:text-primary data-[status=active]:font-medium"
               >

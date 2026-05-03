@@ -1,7 +1,6 @@
 import { Metadata } from "next";
 import { Reveal } from "@/components/reveal";
 import { Sierpinski } from "@/components/sierpinski";
-import { Anchor } from "@/components/anchor";
 
 export const metadata: Metadata = {
   title: "História & Origens — Fractais",
@@ -44,22 +43,16 @@ const sections = [
 
 export default function HistoriaPage() {
   return (
-    <article className="mx-auto max-w-6xl px-5 md:px-8 py-16 md:py-12">
-      <div>
-        
-      </div>
+    <article className="mx-auto max-w-6xl px-5 md:px-8 py-16 md:py-24">
       <Reveal>
         <p className="text-xs uppercase tracking-[0.3em] text-primary mb-4">Capítulo II</p>
         <h1 className="font-serif text-5xl md:text-7xl leading-none tracking-tight text-balance max-w-4xl mb-8">
-          História
+          Onde a história foi pesquisada.
         </h1>
         <p className="text-lg md:text-xl text-foreground/75 max-w-3xl leading-relaxed mb-16">
-          Antropólogos do século XIX viam nas aldeias africanas desordem orgânica. Engano.
-          Cada curva, cada repetição em escala, cada subdivisão era resultado de escolhas deliberadas,
-          codificadas e transmitidas oralmente — uma matemática viva.
+          Cada parágrafo deste arquivo se apoia em décadas de etnomatemática, antropologia e história da computação. Explore as fontes, filtre por tipo, busque por autor — e mergulhe.
         </p>
       </Reveal>
-      <Anchor nextLabel="Contextualização" nextRoute="/contextualizacao"/>
     </article>
   );
 }

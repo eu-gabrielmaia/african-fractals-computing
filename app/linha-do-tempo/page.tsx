@@ -29,7 +29,7 @@ export default function TimelinePage() {
     <section className="mx-auto max-w-5xl px-5 md:px-8 py-16 md:py-24">
       <Reveal>
         <p className="text-xs uppercase tracking-[0.3em] text-primary mb-4">Capítulo III</p>
-        <h1 className="font-serif text-5xl md:text-7xl leading-[1] tracking-tight max-w-3xl mb-6">
+        <h1 className="font-serif text-5xl md:text-7xl leading-none tracking-tight max-w-3xl mb-6">
           Uma cronologia <em>não-linear</em>.
         </h1>
         <p className="text-lg text-foreground/70 max-w-2xl mb-16">
@@ -38,7 +38,7 @@ export default function TimelinePage() {
       </Reveal>
 
       <div className="relative">
-        <div className="absolute left-8 md:left-1/2 top-0 bottom-0 w-px bg-gradient-to-b from-transparent via-primary/40 to-transparent md:-translate-x-px" />
+        <div className="absolute left-8 md:left-1/2 top-0 bottom-0 w-px bg-linear-to-b from-transparent via-primary/40 to-transparent md:-translate-x-px" />
 
         <div className="space-y-16">
           {events.map((e, i) => {

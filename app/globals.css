@@ -39,6 +39,8 @@
   --color-popover: var(--popover);
   --color-card-foreground: var(--card-foreground);
   --color-card: var(--card);
+  --color-background-sand: var(--background-sand);
+  --color-background-ancestral: var(--background-ancestral);
   --radius-sm: calc(var(--radius) * 0.6);
   --radius-md: calc(var(--radius) * 0.8);
   --radius-lg: var(--radius);
@@ -58,7 +60,8 @@
   --savana: oklch(0.68 0.14 95);
   --vermelho-bogolan: oklch(0.45 0.17 28);
   --verde-mata: oklch(0.45 0.1 145);
-
+  --background-sand: oklch(0.93 0.022 75);
+  --background-ancestral: oklch(0.32 0.08 36);
   ---background: oklch(0.95 0.028 75);
   --foreground: oklch(0.2 0.018 45);
   --card: oklch(0.97 0.02 80);
@@ -96,6 +99,7 @@
 
 .dark {
   --background: oklch(0.16 0.02 45);
+  --background-sand: oklch(0.16 0.015 50);
   --foreground: oklch(0.94 0.03 80);
   --card: oklch(0.21 0.025 45);
   --card-foreground: oklch(0.94 0.03 80);
