@@ -4,7 +4,6 @@ import { Sierpinski } from "@/components/sierpinski";
 import { Anchor } from "@/components/anchor";
 import { AdinkraPattern } from "@/components/adinktraPattern";
 import { FractalTree } from "@/components/fractralTree";
-import Link from "next/link";
 import { MapPin } from 'lucide-react';
 
 export const metadata: Metadata = {
@@ -218,19 +217,24 @@ export default function ContextualizacaoPage() {
         </div>
       </section>
 
-      <ol className="grid sm:grid-cols-2 gap-x-8 gap-y-2 text-foreground/80">
-        {sections.map((s) => (
-          <li key={s.n}>
-            <Link
-              href={`#sec-${s.n}`}
-              className="flex items-baseline gap-3 hover:text-primary transition"
-            >
-              <span className="font-serif text-primary/60">{s.n}.</span>
-              <span className="font-serif">{s.title}</span>
-            </Link>
-          </li>
-        ))}
-      </ol>
+      <section className="border-b border-border bg-[oklch(0.96_0.02_75)] dark:bg-[oklch(0.16_0.015_50)]">
+        <div className="mx-auto max-w-5xl px-5 md:px-8 py-10">
+          <p className="text-xs uppercase tracking-[0.3em] text-primary mb-4">Sumário</p>
+          <ol className="grid sm:grid-cols-2 gap-x-8 gap-y-2 text-foreground/80">
+            {sections.map((s) => (
+              <li key={s.n}>
+                <a
+                  href={`#sec-${s.n}`}
+                  className="flex items-baseline gap-3 hover:text-primary transition"
+                >
+                  <span className="font-serif text-primary/60">{s.n}.</span>
+                  <span className="font-serif">{s.title}</span>
+                </a>
+              </li>
+            ))}
+          </ol>
+        </div>
+      </section>
       {sections.map((s, i) => (
         <section
           key={s.n}
