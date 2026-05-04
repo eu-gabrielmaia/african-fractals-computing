@@ -28,7 +28,7 @@ export default function TimelinePage() {
   return (
     <section className="mx-auto max-w-5xl px-5 md:px-8 py-16 md:py-24">
       <Reveal>
-        <p className="text-xs uppercase tracking-[0.3em] text-primary mb-4">Capítulo III</p>
+        <p className="text-xs uppercase tracking-[0.3em] text-primary mb-4">Linha do tempo</p>
         <h1 className="font-serif text-5xl md:text-7xl leading-none tracking-tight max-w-3xl mb-6">
           Uma cronologia <em>não-linear</em>.
         </h1>
