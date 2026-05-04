@@ -1,10 +1,9 @@
 import type { Metadata } from "next";
-import { Button } from "@/components/ui/button";
 import Link from "next/link";
 import { Reveal } from "@/components/reveal";
 import { Sierpinski } from "@/components/sierpinski";
 import { FractalTree } from "@/components/fractralTree";
-import { ArrowRight, Sparkles } from "lucide-react";
+import { ArrowRight, MonitorPlay } from "lucide-react";
 
 export const metadata: Metadata = {
   title: "Fractais d'África — A geometria que o mundo esqueceu",
@@ -17,38 +16,57 @@ export const metadata: Metadata = {
   },
 };
 
-const cards = [
+interface Card {
+  num: string;
+  href: string;
+  title: string;
+  desc: string;
+}
+
+const cards: Card[] = [
   {
+    num: "01",
+    href: "/introducao",
+    title: "Introdução",
+    desc: "Entenda o que são fractais africanos e por que esses padrões aparecem em diferentes contextos da vida cotidiana.",
+  },
+  {
+    num: "02",
     href: "/historia",
-    title: "História & Origens",
-    desc: "Aldeias Ba-ila, têxteis Kente, divinação Bamana — a matemática ancestral.",
+    title: "História",
+    desc: "Veja como esses padrões surgiram e foram desenvolvidos ao longo do tempo em diferentes sociedades africanas.",
   },
   {
-    href: "/galeria",
-    title: "Galeria",
-    desc: "Arquitetura, têxteis, máscaras e areia: o fractal feito objeto.",
+    num: "03",
+    href: "/contextualizacao",
+    title: "Contextualização",
+    desc: "Veja exemplos reais como aldeias Ba-ila, tecidos Kente e práticas tradicionais que já utilizavam padrões fractais antes da ciência moderna e descubra como esses padrões foram 'esquecidos'",
   },
   {
-    href: "/linha-do-tempo",
-    title: "Linha do Tempo",
-    desc: "Da prática ancestral a Mandelbrot, Eglash e à IA generativa.",
-  },
-  {
+    num: "04",
     href: "/computacao",
     title: "Computação",
-    desc: "Recursão, L-systems e design generativo nascidos antes do código.",
+    desc: "Aprenda como ideias como recursão e algoritmos já estavam presentes nessas práticas e como isso se conecta com a computação atual.",
   },
   {
-    href: "/visualizador",
-    title: "Visualizador",
-    desc: "Mexa nos sliders e veja a recursão desenhar uma aldeia ancestral.",
+    num: "05",
+    href: "/galeria",
+    title: "Galeria",
+    desc: "Explore imagens de arquitetura, arte e objetos que mostram fractais na prática, com exemplos visuais diretos.",
   },
   {
+    num: "06",
+    href: "/pratica",
+    title: "Veja na Prática",
+    desc: "Interaja com simulações e visualize como padrões fractais são gerados passo a passo usando conceitos de computação.",
+  },
+  {
+    num: "07",
     href: "/referencias",
     title: "Notas & Referências",
-    desc: "Bibliografia, artigos e fontes para aprofundar a pesquisa.",
+    desc: "Acesse fontes, artigos e materiais usados no projeto para aprofundar seu entendimento.",
   },
-] as const;
+];
 
 export default function Home() {
   return (
@@ -82,23 +100,23 @@ export default function Home() {
         <div className="mx-auto max-w-6xl px-5 md:px-8 pt-20 pb-28 md:pt-32 md:pb-40">
           <Reveal>
             <p className="text-xs uppercase tracking-[0.3em] text-primary mb-6">
-              Um ensaio visual
+              Quando cultura vira algoritmo
             </p>
           </Reveal>
           <Reveal delay={150}>
             <h1 className="font-serif text-5xl md:text-7xl lg:text-8xl leading-[0.95] tracking-tight text-balance max-w-5xl">
-              A geometria que o mundo <em className="text-primary">esqueceu</em>
-              .
+              Uma forma de ver o mundo que muita gente{" "}
+              <em className="text-primary">ignorou</em>.
             </h1>
           </Reveal>
           <Reveal delay={350}>
             <p className="mt-8 max-w-2xl text-lg md:text-xl text-foreground/75 leading-relaxed">
-              Séculos antes de Mandelbrot, comunidades africanas desenhavam
-              aldeias, teciam panos e adivinhavam o futuro com a mesma
-              matemática que hoje move computadores: a
-              <em className="text-foreground"> recursão</em>, a{" "}
-              <em className="text-foreground">auto-similaridade</em>, o
-              <em className="text-foreground"> algoritmo</em>.
+              Muito antes de existir computador, pessoas já organizavam aldeias,
+              criavam tecidos e representavam ideias usando padrões que se
+              repetem. Hoje a gente chama isso de{" "}
+              <em className="text-foreground">recursão</em> e{" "}
+              <em className="text-foreground">algoritmo</em> — mas isso já
+              existia na prática, no dia a dia.
             </p>
           </Reveal>
           <Reveal delay={550}>
@@ -107,59 +125,64 @@ export default function Home() {
                 href="/historia"
                 className="group inline-flex items-center gap-2 rounded-full bg-primary px-6 py-3 text-sm font-medium text-primary-foreground hover:bg-primary/90 transition-all hover:gap-3"
               >
-                Começar a história <ArrowRight size={16} />
+                Começar leitura <ArrowRight size={16} />
               </Link>
               <Link
                 href="/visualizador"
                 className="inline-flex items-center gap-2 rounded-full border border-foreground/20 px-6 py-3 text-sm font-medium hover:border-foreground/50 transition"
               >
-                <Sparkles size={16} /> Veja na prática
+                <MonitorPlay size={16} /> Explorar na prática
               </Link>
             </div>
           </Reveal>
         </div>
       </section>
-      <section className="border-y border-border/60 bg-background-sand">
-        <div className="mx-auto max-w-4xl px-5 md:px-8 py-20 text-center"></div>
+      <section className="border-y border-border/60 bg-[oklch(0.93_0.022_75)]">
+        <div className="mx-auto max-w-4xl px-5 md:px-8 py-20 text-center">
+          <Reveal>
+            <p className="font-serif text-2xl md:text-3xl leading-snug italic text-balance">
+              {`"Quando os matemáticos europeus descobriram os fractais nos anos 1970,
+  os povos africanos já os tinham construído nas suas aldeias por séculos."`}
+            </p>
+            <p className="mt-6 text-sm uppercase tracking-widest text-muted-foreground">
+              — Ron Eglash, <em>African Fractals</em> (1999) · tradução livre
+            </p>
+          </Reveal>
+        </div>
       </section>
 
-      <section className="mx-auto max-w-7xl px-5 md:px-8 py-12">
-        <div className="mb-8">
-          <h2 className="font-serif text-5xl leading-[0.95] tracking-tight text-balance max-w-5xl">
+      <section className="mx-auto max-w-7xl px-5 md:px-8 py-24">
+        <Reveal>
+          <h2 className="font-serif text-4xl md:text-5xl mb-3">
             Confira os capitulos
           </h2>
-          <p className="mt-2 max-w-2xl text-lg md:text-xl text-foreground/75 leading-relaxed">
+          <p className="text-foreground/70 max-w-2xl mb-12">
             Quer entender melhor? Siga nosso{" "}
             <em className="text-foreground">roteiro sugerido</em>.
           </p>
-        </div>
+        </Reveal>
+
         <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
-          {cards.map((card, i) => {
-            return (
-              <div
-                key={i}
-                className="bg-background-sand/50 border border-border rounded-2xl p-4"
+          {cards.map((c) => (
+            <Reveal key={c.num} delay={1 * 100}>
+              <Link
+                href={c.href}
+                className="group relative block overflow-hidden rounded-2xl border border-border bg-card p-8 transition-all hover:border-primary/60 hover:shadow-2xl hover:-translate-y-1"
               >
-                <div className="my-2">
-                  <div className="flex flex-col gap-2">
-                    <h3 className="text-2xl font-bold text-primary">
-                      {i + 1}.
-                    </h3>
-                    <h3 className="text-2xl font-medium">{card.title}</h3>
-                  </div>
-                  <p>{card.desc}</p>
-                </div>
-                <Button asChild>
-                  <Link
-                    href={card.href}
-                    className="w-full bg-primary/80"
-                  >
-                    Acesse
-                  </Link>
-                </Button>
-              </div>
-            );
-          })}
+                <h3 className="font-serif text-2xl mb-2">
+                  <em className="text-primary">{c.num}.</em> {c.title}
+                </h3>
+                <p className="text-foreground/70 mb-6 max-w-md">{c.desc}</p>
+                <span className="inline-flex items-center gap-2 text-sm font-medium text-primary">
+                  Explorar{" "}
+                  <ArrowRight
+                    size={14}
+                    className="group-hover:translate-x-1 transition-transform"
+                  />
+                </span>
+              </Link>
+            </Reveal>
+          ))}
         </div>
       </section>
 
@@ -174,14 +197,13 @@ export default function Home() {
             </div>
             <div className="relative max-w-xl">
               <p className="text-xs uppercase tracking-[0.3em] text-[oklch(0.78_0.13_85)] mb-4">
-                Laboratório
+                Mão na massa
               </p>
               <h3 className="font-serif text-3xl md:text-4xl mb-4">
-                Desenhe um fractal com as suas mãos.
+                Simuladores de fractais
               </h3>
               <p className="opacity-80 mb-8 leading-relaxed">
-                Mexa nos sliders, veja o padrão emergir e descubra as poucas
-                linhas de código que separam um algoritmo de uma aldeia.
+                Use alguns simuladores de fractais e aprenda na prática
               </p>
               <Link
                 href="/visualizador"

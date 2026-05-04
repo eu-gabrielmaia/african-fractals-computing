@@ -11,7 +11,7 @@ const links = [
   { href: "/computacao", label: "Computação" },
   { href: "/linha-do-tempo", label: "Linha do Tempo" },
   { href: "/galeria", label: "Galeria" },
-  { href: "/visualizador", label: "Visualizador" },
+  { href: "/pratica", label: "Prática" },
   { href: "/referencias", label: "Referências" },
 ] as const;
 

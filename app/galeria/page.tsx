@@ -1,23 +1,14 @@
-import { Metadata } from "next";
 import { Reveal } from "@/components/reveal";
-import {
-  Landmark,
-  Skull,
-  Atom,
-  BookOpen,
-  GraduationCap,
-  Sparkles,
-  Compass,
-} from "lucide-react";
+import { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Linha do Tempo — Fractais",
+  title: "Galeria — Fractais",
   description:
-    "Da prática ancestral africana a Mandelbrot, Eglash e à IA generativa: a história não-linear dos fractais.",
+    "Arquitetura, arte e objetos que mostram padrões fractais aplicados na prática em diferentes contextos.",
   openGraph: {
-    title: "Linha do Tempo — Fractais d'África",
+    title: "Galeria — Fractais d'África",
     description:
-      "Marcos da geometria fractal africana e seu eco na computação moderna.",
+      "Uma coleção visual de padrões que revelam repetição, escala e organização no mundo real.",
   },
 };
 
@@ -134,10 +125,21 @@ const filters: { id: Filter; label: string }[] = [
   { id: "divinacao", label: "Divinação" },
 ];
 
-export default function GaleriaPage(){
+export default function GaleriaPage() {
   return (
-    <div className="">
-
-    </div>
-  )
+    <article className="mx-auto max-w-6xl px-5 md:px-8 py-16 md:py-24">
+      <Reveal>
+        <p className="text-xs uppercase tracking-[0.3em] text-primary mb-4">
+          Galeria
+        </p>
+        <h1 className="font-serif text-5xl md:text-7xl leading-none tracking-tight text-balance max-w-4xl mb-8">
+          O padrão visto de perto
+        </h1>
+        <p className="text-lg md:text-xl text-foreground/75 max-w-3xl leading-relaxed mb-16">
+          Arquitetura, tecidos e objetos revelam como esses padrões aparecem na
+          prática. Explore exemplos visuais diretos.
+        </p>
+      </Reveal>
+    </article>
+  );
 }

@@ -30,10 +30,10 @@ export function Footer() {
         <div>
           <h4 className="font-serif text-base mb-3 text-[oklch(0.78_0.13_85)]">Integrantes do grupo</h4>
           <ul className="space-y-2 text-sm opacity-80">
-            <li>Nomes 1</li>
-            <li>Nomes 2</li>
-            <li>Nomes 3</li>
-            <li>Nomes 4</li>
+            <li>Gabriel Augusto Pereira</li>
+            <li>Henrique Mohr</li>
+            <li>Malick Figueroa Sanó</li>
+            <li>Pedro Henrique</li>
           </ul>
         </div>
       </div>

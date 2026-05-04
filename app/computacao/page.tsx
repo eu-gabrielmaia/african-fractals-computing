@@ -1,11 +1,9 @@
 import { Metadata } from "next";
-import Link from "next/link";
 import { Reveal } from "@/components/reveal";
 import { AdinkraPattern } from "@/components/adinktraPattern";
 import { FractalTree } from "@/components/fractralTree";
 import { Sierpinski } from "@/components/sierpinski";
-import { ArrowRight, ImageIcon, BookOpen } from "lucide-react";
-import { Anchor } from "@/components/anchor";
+import { ImageIcon } from "lucide-react";
 
 export const metadata: Metadata = {
   title:
@@ -93,11 +91,11 @@ const sections: Section[] = [
 
 function ImagePlaceholder({ caption, alt }: { caption: string; alt: string }) {
   return (
-    <figure className="mt-10 rounded-2xl border border-dashed border-primary/40 bg-[oklch(0.96_0.02_75)] dark:bg-[oklch(0.18_0.015_50)] p-6">
+    <figure className="mt-10 rounded-2xl border border-dashed border-primary/40 bg-background-sand p-6">
       <div
         role="img"
         aria-label={alt}
-        className="aspect-video w-full rounded-xl bg-linear-to-br from-[oklch(0.92_0.04_75)] to-[oklch(0.85_0.06_55)] dark:from-[oklch(0.22_0.02_50)] dark:to-[oklch(0.16_0.02_50)] flex flex-col items-center justify-center text-foreground/50"
+        className="aspect-video w-full rounded-xl bg-background-sand flex flex-col items-center justify-center text-foreground/50"
       >
         <ImageIcon size={42} strokeWidth={1.2} />
         <span className="mt-3 text-xs uppercase tracking-[0.3em]">Espaço para imagem</span>
@@ -126,7 +124,7 @@ export default function RelacaoComputacaoPage() {
         <div className="relative mx-auto max-w-5xl px-5 md:px-8 py-24 md:py-32">
           <Reveal>
             <p className="inline-flex items-center gap-2 text-xs uppercase tracking-[0.35em] text-primary mb-6">
-              Capítulo IV
+              Capítulo IV - Computação
             </p>
             <h1 className="font-serif text-4xl md:text-6xl lg:text-7xl leading-none tracking-tight text-balance mb-8">
               Relação dos Fractais Africanos com a <em className="text-primary">Computação Moderna</em>

@@ -7,13 +7,13 @@ import { FractalTree } from "@/components/fractralTree";
 import { MapPin } from 'lucide-react';
 
 export const metadata: Metadata = {
-  title: "Geometria Fractal Africana — Padrões Intencionais",
+  title: "Contextualização — Fractais",
   description:
-    "Aldeias Ba-Ila, palácio Kotoko, panos Kente e para-ventos do Sahel: a matemática fractal intencional dos povos africanos.",
+    "Por que padrões africanos foram vistos como desordem e como essa leitura ignorou a lógica cultural por trás dessas estruturas.",
   openGraph: {
-    title: "Geometria Fractal Africana — Padrões Intencionais",
+    title: "Contextualização — Fractais d'África",
     description:
-      "Como culturas africanas codificaram a recursão e a auto-similaridade muito antes da palavra existir.",
+      "Quando organização foi confundida com caos: entendendo os limites da visão europeia sobre esses padrões.",
   },
 };
 
@@ -33,7 +33,7 @@ interface Section {
 
 const architecture: SubSection[] = [
   {
-    num: "01",
+    num: "2.1",
     geo: "Zâmbia",
     title: "O povo Ba-Ila",
     paragraphs: [
@@ -42,7 +42,7 @@ const architecture: SubSection[] = [
     ],
   },
   {
-    num: "02",
+    num: "2.2",
     geo: "Camarões",
     title: "Logone-Birni — palácio dos Kotoko",
     paragraphs: [
@@ -51,7 +51,7 @@ const architecture: SubSection[] = [
     ],
   },
   {
-    num: "03",
+    num: "2.3",
     geo: "Gana",
     title: "O povo Nankani",
     paragraphs: [
@@ -63,7 +63,7 @@ const architecture: SubSection[] = [
 
 const techniques: SubSection[] = [
   {
-    num: "01",
+    num: "3.1",
     geo: "Sahel",
     title: "Para-ventos do Sahel",
     paragraphs: [
@@ -72,7 +72,7 @@ const techniques: SubSection[] = [
     ],
   },
   {
-    num: "02",
+    num: "3.2",
     geo: "Gana",
     title: "O pano Kente",
     paragraphs: [
@@ -82,11 +82,9 @@ const techniques: SubSection[] = [
   },
 ];
 
-// Adicione ao topo, junto com architecture e techniques:
-
 const undervaluation: SubSection[] = [
   {
-    num: "01",
+    num: "4.1",
     title: "A visão europeia e o erro de interpretação",
     paragraphs: [
       "Durante os séculos XVIII e XIX, muitos europeus chegaram à África com uma visão de mundo muito rígida, baseada em linhas retas, ordem geométrica e planejamento urbano centralizado. Quando viam aldeias organizadas de forma diferente, muitas vezes interpretavam isso como desordem ou atraso.",
@@ -94,7 +92,7 @@ const undervaluation: SubSection[] = [
     ],
   },
   {
-    num: "02",
+    num: "4.2",
     title: "O reconhecimento que veio tarde demais",
     paragraphs: [
       "Por muito tempo, a academia só passou a valorizar esses conhecimentos depois que a matemática moderna começou a estudar os fractais de forma mais formal. Isso fez com que práticas que já existiam há séculos fossem tratadas como se só tivessem importância quando receberam um nome técnico no Ocidente.",
@@ -207,7 +205,7 @@ export default function ContextualizacaoPage() {
         <div className="relative mx-auto max-w-5xl px-5 md:px-8 py-24 md:py-32">
           <Reveal>
             <p className="inline-flex items-center gap-2 text-xs uppercase tracking-[0.35em] text-primary mb-6">
-              Capítulo III
+              Capítulo III - Contextualização
             </p>
             <h1 className="font-serif text-4xl md:text-6xl lg:text-7xl leading-none tracking-tight text-balance mb-8">
               Padrões <em className="text-primary">intencionais</em>,<br />

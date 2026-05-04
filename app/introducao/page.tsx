@@ -5,14 +5,13 @@ import { Sierpinski } from "@/components/sierpinski";
 import { FractalTree } from "@/components/fractralTree";
 import { AdinkraPattern } from "@/components/adinktraPattern";
 import { ArrowRight } from "lucide-react";
-import { Anchor } from "@/components/anchor";
 
 export const metadata: Metadata = {
-  title: "O Código Ancestral — Fractais d'África",
+  title: "O Código Ancestral — Fractais",
   description:
     "A lógica complexa por trás da programação moderna já era aplicada há séculos por povos africanos. Auto-similaridade, iteração e dimensão fractal antes do silício.",
   openGraph: {
-    title: "O Código Ancestral — Fractais d'África",
+    title: "O Código Ancestral — Fractais",
     description:
       "Régua euclidiana vs. mundo fractal — e os três fundamentos que ligam a aldeia ao algoritmo.",
   },
@@ -60,7 +59,7 @@ export default function IntroducaoPage() {
         <div className="relative mx-auto max-w-5xl px-5 md:px-8 py-24 md:py-36">
           <Reveal>
             <p className="inline-flex items-center gap-2 text-xs uppercase tracking-[0.35em] text-primary mb-6">
-              Capítulo I
+              Capítulo I - Introdução
             </p>
             <h1 className="font-serif text-5xl md:text-7xl lg:text-8xl leading-[0.95] tracking-tight text-balance mb-8">
               O Código <em className="text-primary">Ancestral</em>.
