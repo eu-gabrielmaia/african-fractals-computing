@@ -128,7 +128,7 @@ export default function Home() {
                 Começar leitura <ArrowRight size={16} />
               </Link>
               <Link
-                href="/visualizador"
+                href="/pratica"
                 className="inline-flex items-center gap-2 rounded-full border border-foreground/20 px-6 py-3 text-sm font-medium hover:border-foreground/50 transition"
               >
                 <MonitorPlay size={16} /> Explorar na prática
@@ -206,7 +206,7 @@ export default function Home() {
                 Use alguns simuladores de fractais e aprenda na prática
               </p>
               <Link
-                href="/visualizador"
+                href="/pratica"
                 className="inline-flex items-center gap-2 rounded-full bg-[oklch(0.78_0.13_85)] text-[oklch(0.22_0.015_50)] px-6 py-3 text-sm font-medium hover:opacity-90 transition"
               >
                 Abrir visualizador <ArrowRight size={16} />

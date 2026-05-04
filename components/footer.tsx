@@ -22,7 +22,7 @@ export function Footer() {
             <li><Link href="/galeria" className="hover:opacity-100 hover:text-[oklch(0.78_0.13_85)] transition">Galeria</Link></li>
             <li><Link href="/linha-do-tempo" className="hover:opacity-100 hover:text-[oklch(0.78_0.13_85)] transition">Linha do Tempo</Link></li>
             <li><Link href="/computacao" className="hover:opacity-100 hover:text-[oklch(0.78_0.13_85)] transition">Conexão com a Computação</Link></li>
-            <li><Link href="/visualizador" className="hover:opacity-100 hover:text-[oklch(0.78_0.13_85)] transition">Visualizador Interativo</Link></li>
+            <li><Link href="/pratica" className="hover:opacity-100 hover:text-[oklch(0.78_0.13_85)] transition">Visualizador Interativo</Link></li>
             <li><Link href="/referencias" className="hover:opacity-100 hover:text-[oklch(0.78_0.13_85)] transition">Notas & Referências</Link></li>
           </ul>
         </div>

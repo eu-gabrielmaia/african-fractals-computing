@@ -314,7 +314,7 @@ export default function IntroducaoPage() {
                 Continuar roteiro <ArrowRight size={16} />
               </Link>
               <Link
-                href="/visualizador"
+                href="/pratica"
                 className="inline-flex items-center gap-2 rounded-full border border-border px-6 py-3 text-sm font-medium hover:bg-foreground/5 transition"
               >
                 Brincar com o fractal
