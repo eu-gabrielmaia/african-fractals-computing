@@ -56,7 +56,7 @@ export function Footer() {
             Integrantes do grupo
           </h4>
           <ul className="space-y-2 text-sm opacity-80">
-            <li>Gabriel Augusto Pereira</li>
+            <li>Gabriel Augusto Pereira Maia</li>
             <li>Henrique Mohr</li>
             <li>Malick Figueroa Sanó</li>
             <li>Pedro Henrique</li>

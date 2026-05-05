@@ -299,7 +299,7 @@ export default function IntroducaoPage() {
         <div className="relative mx-auto px-5 md:px-8 py-24 md:py-32 text-center">
           <Reveal>
             <p className="text-xs uppercase tracking-[0.4em] text-primary mb-6">
-              Coda
+              Frase
             </p>
             <p className="font-serif text-4xl md:text-6xl leading-[1.1] text-balance">
               O algoritmo não nasceu no Vale do Silício.
