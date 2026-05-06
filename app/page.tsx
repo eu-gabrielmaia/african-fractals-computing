@@ -1,8 +1,8 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { Reveal } from "@/components/reveal";
-import { Sierpinski } from "@/components/sierpinski";
-import { FractalTree } from "@/components/fractralTree";
+import { Sierpinski, FractalTree } from "@/components/backgrounds";
+import { QuoteSection } from "@/components/sections"
 import { ArrowRight, MonitorPlay } from "lucide-react";
 
 export const metadata: Metadata = {
@@ -137,19 +137,14 @@ export default function Home() {
           </Reveal>
         </div>
       </section>
-      <section className="border-y border-border/60 bg-[oklch(0.93_0.022_75)]">
-        <div className="mx-auto max-w-4xl px-5 md:px-8 py-20 text-center">
-          <Reveal>
-            <p className="font-serif text-2xl md:text-3xl leading-snug italic text-balance">
-              {`"Quando os matemáticos europeus descobriram os fractais nos anos 1970,
-  os povos africanos já os tinham construído nas suas aldeias por séculos."`}
-            </p>
-            <p className="mt-6 text-sm uppercase tracking-widest text-muted-foreground">
-              — Ron Eglash, <em>African Fractals</em> (1999) · tradução livre
-            </p>
-          </Reveal>
-        </div>
-      </section>
+      <QuoteSection
+        quote="Quando os matemáticos europeus descobriram os fractais nos anos 1970,
+  os povos africanos já os tinham construído nas suas aldeias por séculos."
+        author="Ron Eglash"
+        source="African Fractals"
+        year="1999"
+        translated={true}
+      />
 
       <section className="mx-auto max-w-7xl px-5 md:px-8 py-24">
         <Reveal>

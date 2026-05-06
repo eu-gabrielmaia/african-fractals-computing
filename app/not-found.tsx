@@ -1,6 +1,6 @@
 import { Button } from "@/components/ui/button";
+import { AdinkraPattern } from "@/components/backgrounds";
 import Link from "next/link";
-import { AdinkraPattern } from "@/components/adinktraPattern";
 
 export default function NotFoundComponent() {
   return (

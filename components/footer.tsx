@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { Sierpinski } from "./sierpinski";
+import { Sierpinski } from "./backgrounds";
 
 const links = [
   { href: "/introducao", label: "Introdução" },

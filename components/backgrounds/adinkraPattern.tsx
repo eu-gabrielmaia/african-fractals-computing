@@ -4,7 +4,7 @@ interface Props {
   opacity?: number;
 }
 
-export function AdinkraPattern({ className, color = "currentColor", opacity = 0.08 }: Props) {
+export default function AdinkraPattern({ className, color = "currentColor", opacity = 0.08 }: Props) {
   return (
     <svg
       className={className}

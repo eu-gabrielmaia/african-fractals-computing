@@ -52,7 +52,7 @@ interface Props {
   className?: string;
 }
 
-export function FractalTree({
+export default function FractalTree({
   depth = 9,
   angle = 25,
   scale = 0.72,

@@ -1,10 +1,11 @@
 import { Metadata } from "next";
 import { Reveal } from "@/components/reveal";
-import { Sierpinski } from "@/components/sierpinski";
-import { Anchor } from "@/components/anchor";
-import { AdinkraPattern } from "@/components/adinktraPattern";
-import { FractalTree } from "@/components/fractralTree";
-import { MapPin } from 'lucide-react';
+import {
+  SummarySection,
+  AnchorSection,
+  HeroSection,
+} from "@/components/sections";
+import { MapPin } from "lucide-react";
 
 export const metadata: Metadata = {
   title: "Contextualização — Fractais",
@@ -190,58 +191,22 @@ function SubSectionCard({
 
 export default function ContextualizacaoPage() {
   return (
-    <article className="relative">
-      <section className="relative overflow-hidden border-b border-border">
-        <div className="absolute inset-0 text-primary">
-          <AdinkraPattern opacity={0.06} />
-        </div>
-        <div className="absolute -right-16 top-8 opacity-20 hidden md:block">
-          <FractalTree depth={9} className="w-95 h-95 text-primary" />
-        </div>
-        <div className="absolute -left-12 bottom-0 opacity-15 hidden md:block">
-          <Sierpinski depth={6} size={280} color="oklch(0.55 0.16 35)" />
-        </div>
-
-        <div className="relative mx-auto max-w-5xl px-5 md:px-8 py-24 md:py-32">
-          <Reveal>
-            <p className="inline-flex items-center gap-2 text-xs uppercase tracking-[0.35em] text-primary mb-6">
-              Capítulo III - Contextualização
-            </p>
-            <h1 className="font-serif text-4xl md:text-6xl lg:text-7xl leading-none tracking-tight text-balance mb-8">
-              Padrões <em className="text-primary">intencionais</em>,<br />
-              não acidentais.
-            </h1>
-          </Reveal>
-        </div>
-      </section>
-
-      <section className="border-b border-border bg-[oklch(0.96_0.02_75)] dark:bg-[oklch(0.16_0.015_50)]">
-        <div className="mx-auto max-w-5xl px-5 md:px-8 py-10">
-          <p className="text-xs uppercase tracking-[0.3em] text-primary mb-4">Sumário</p>
-          <ol className="grid sm:grid-cols-2 gap-x-8 gap-y-2 text-foreground/80">
-            {sections.map((s) => (
-              <li key={s.n}>
-                <a
-                  href={`#sec-${s.n}`}
-                  className="flex items-baseline gap-3 hover:text-primary transition"
-                >
-                  <span className="font-serif text-primary/60">{s.n}.</span>
-                  <span className="font-serif">{s.title}</span>
-                </a>
-              </li>
-            ))}
-          </ol>
-        </div>
-      </section>
+    <article>
+      <HeroSection
+        eyebrow="Capítulo III - Contextualização"
+        title={
+          <>
+            Padrões <em className="text-primary">intencionais</em>,<br />
+            não acidentais.
+          </>
+        }
+      />
+      <SummarySection sections={sections} />
       {sections.map((s, i) => (
         <section
           key={s.n}
           id={`sec-${s.n}`}
-          className={`scroll-mt-24 ${
-            i % 2 === 1
-              ? "bg-background-sand"
-              : ""
-          }`}
+          className={`scroll-mt-24 ${i % 2 === 1 ? "bg-background-sand" : ""}`}
         >
           <div className="mx-auto max-w-3xl px-5 md:px-8 py-20 md:py-24">
             <Reveal>
@@ -293,7 +258,10 @@ export default function ContextualizacaoPage() {
           </div>
         </div>
       </Reveal>
-      <Anchor nextLabel="Relação na Computação" nextRoute="/computacao" />
+      <AnchorSection
+        nextLabel="Relação na Computação"
+        nextRoute="/computacao"
+      />
     </article>
   );
 }

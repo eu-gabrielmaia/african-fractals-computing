@@ -1,10 +1,6 @@
 import { Metadata } from "next";
 import { Reveal } from "@/components/reveal";
-import { AdinkraPattern } from "@/components/adinktraPattern";
-import { FractalTree } from "@/components/fractralTree";
-import { Sierpinski } from "@/components/sierpinski";
-import { ArrowRight } from "lucide-react";
-import Link from "next/link";
+import { HeroSection, SummarySection, AnchorSection } from "@/components/sections";
 
 export const metadata: Metadata = {
   title: "História & Origens — Fractais",
@@ -76,52 +72,16 @@ const sections: Section[] = [
 export default function HistoriaPage() {
   return (
     <article className="relative">
-      <section className="relative overflow-hidden border-b border-border">
-        <div className="absolute inset-0 text-primary">
-          <AdinkraPattern opacity={0.06} />
-        </div>
-        <div className="absolute -right-16 top-8 opacity-20 hidden md:block">
-          <FractalTree depth={9} className="w-95 h-95 text-primary" />
-        </div>
-        <div className="absolute -left-12 bottom-0 opacity-15 hidden md:block">
-          <Sierpinski depth={6} size={280} color="oklch(0.55 0.16 35)" />
-        </div>
-
-        <div className="relative mx-auto max-w-5xl px-5 md:px-8 py-24 md:py-32">
-          <Reveal>
-            <p className="inline-flex items-center gap-2 text-xs uppercase tracking-[0.35em] text-primary mb-6">
-              Capítulo II - História
-            </p>
-            <h1 className="font-serif text-4xl md:text-6xl lg:text-7xl leading-none tracking-tight text-balance mb-8">
-              O <em className="text-primary">caminho</em>, do código.
-            </h1>
-            <p className="mt-6 text-base md:text-lg text-foreground/70 max-w-3xl leading-relaxed">
-              Da areia do deserto ao silício dos processadores. O caminho do
-              código
-            </p>
-          </Reveal>
-        </div>
-      </section>
-      <section className="border-b border-border bg-background-sand dark:bg-[oklch(0.16_0.015_50)]">
-        <div className="mx-auto max-w-5xl px-5 md:px-8 py-10">
-          <p className="text-xs uppercase tracking-[0.3em] text-primary mb-4">
-            Sumário
-          </p>
-          <ol className="grid sm:grid-cols-2 gap-x-8 gap-y-2 text-foreground/80">
-            {sections.map((s) => (
-              <li key={s.n}>
-                <a
-                  href={`#sec-${s.n}`}
-                  className="flex items-baseline gap-3 hover:text-primary transition"
-                >
-                  <span className="font-serif text-primary/60">{s.n}.</span>
-                  <span className="font-serif">{s.title}</span>
-                </a>
-              </li>
-            ))}
-          </ol>
-        </div>
-      </section>
+      <HeroSection
+        eyebrow="Capítulo II - História"
+        title={
+          <>
+            O <em className="text-primary">caminho</em>, do código.
+          </>
+        }
+        description="Da areia do deserto ao silício dos processadores. O caminho do código."
+      />
+      <SummarySection sections={sections} />
       {sections.map((s, i) => (
         <section
           key={s.n}
@@ -162,37 +122,12 @@ export default function HistoriaPage() {
           </div>
         </section>
       ))}
-      <section className="relative border-t border-border overflow-hidden">
-        <div className="absolute inset-0 text-primary">
-          <AdinkraPattern opacity={0.05} />
-        </div>
-        <div className="relative mx-auto px-5 md:px-8 py-24 md:py-32 text-center">
-          <Reveal>
-            <p className="text-xs uppercase tracking-[0.4em] text-primary mb-6">
-              Frase
-            </p>
-            <p className="font-serif text-4xl md:text-6xl leading-[1.1] text-balance">
-              O código binário não foi inventado do zero em um escritório europeu.
-              <br />
-              <em className="text-primary">Ele foi traduzido!</em>
-            </p>
-            <div className="mt-12 flex flex-wrap justify-center gap-4">
-              <Link
-                href="/contextualizacao"
-                className="inline-flex items-center gap-2 rounded-full bg-primary px-6 py-3 text-sm font-medium text-primary-foreground hover:bg-primary/90 transition"
-              >
-                Continuar roteiro <ArrowRight size={16} />
-              </Link>
-              <Link
-                href="/pratica"
-                className="inline-flex items-center gap-2 rounded-full border border-border px-6 py-3 text-sm font-medium hover:bg-foreground/5 transition"
-              >
-                Brincar com o fractal
-              </Link>
-            </div>
-          </Reveal>
-        </div>
-      </section>
+      <AnchorSection
+        variant={"narrative"}
+        phrase="O código binário não foi inventado do zero em um escritório europeu."
+        highlight="Ele foi traduzido!"
+        nextRoute="/contextualizacao"
+      />
     </article>
   );
 }

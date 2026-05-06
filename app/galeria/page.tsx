@@ -1,5 +1,5 @@
-import { Reveal } from "@/components/reveal";
 import { Metadata } from "next";
+import { Reveal } from "@/components/reveal";
 
 export const metadata: Metadata = {
   title: "Galeria — Fractais",

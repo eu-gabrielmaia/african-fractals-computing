@@ -33,7 +33,7 @@ interface Props {
   animate?: boolean;
 }
 
-export function Sierpinski({
+export default function Sierpinski({
   depth = 5,
   size = 400,
   color = "currentColor",

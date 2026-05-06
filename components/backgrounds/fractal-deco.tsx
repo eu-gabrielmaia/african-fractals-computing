@@ -5,7 +5,7 @@ interface FractalDecoProps {
   className?: string;
 }
 
-export function FractalDeco({
+export default function FractalDeco({
   size = 160,
   color = "#B85C28",
   opacity = 0.08,

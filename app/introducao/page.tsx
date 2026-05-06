@@ -1,10 +1,10 @@
 import { Metadata } from "next";
-import Link from "next/link";
 import { Reveal } from "@/components/reveal";
-import { Sierpinski } from "@/components/sierpinski";
-import { FractalTree } from "@/components/fractralTree";
-import { AdinkraPattern } from "@/components/adinktraPattern";
-import { ArrowRight } from "lucide-react";
+import {
+  Sierpinski,
+  FractalTree,
+} from "@/components/backgrounds";
+import { AnchorSection, HeroSection } from "@/components/sections";
 
 export const metadata: Metadata = {
   title: "O Código Ancestral — Fractais",
@@ -16,7 +16,6 @@ export const metadata: Metadata = {
       "Régua euclidiana vs. mundo fractal — e os três fundamentos que ligam a aldeia ao algoritmo.",
   },
 };
-
 
 const fundamentos = [
   {
@@ -45,39 +44,28 @@ const fundamentos = [
 export default function IntroducaoPage() {
   return (
     <article className="relative">
-      <section className="relative overflow-hidden border-b border-border">
-        <div className="absolute inset-0 text-primary">
-          <AdinkraPattern opacity={0.06} />
-        </div>
-        <div className="absolute -right-20 top-10 opacity-20 hidden md:block">
-          <FractalTree depth={9} className="w-105 h-105 text-primary" />
-        </div>
-        <div className="absolute -left-16 bottom-0 opacity-15 hidden md:block">
-          <Sierpinski depth={6} size={320} color="oklch(0.55 0.16 35)" />
-        </div>
-
-        <div className="relative mx-auto max-w-5xl px-5 md:px-8 py-24 md:py-36">
-          <Reveal>
-            <p className="inline-flex items-center gap-2 text-xs uppercase tracking-[0.35em] text-primary mb-6">
-              Capítulo I - Introdução
-            </p>
-            <h1 className="font-serif text-5xl md:text-7xl lg:text-8xl leading-[0.95] tracking-tight text-balance mb-8">
-              O Código <em className="text-primary">Ancestral</em>.
-            </h1>
-            <p className="text-lg md:text-2xl text-foreground/75 max-w-3xl leading-relaxed font-serif italic">
-              Quando você pensa em {"algoritmo"} ou {"tecnologia"}, qual é a
-              primeira imagem que vem à sua mente? Laboratórios europeus, linhas
-              de código, a arquitetura de Von Neumann?
-            </p>
-            <p className="mt-6 text-base md:text-lg text-foreground/70 max-w-3xl leading-relaxed">
-              E se a lógica complexa por trás da programação moderna já
-              estivesse sendo aplicada muito antes das placas de silício? Para
-              entender essa revolução, precisamos mudar as lentes através das
-              quais enxergamos o mundo.
-            </p>
-          </Reveal>
-        </div>
-      </section>
+      <HeroSection
+        eyebrow="Capítulo I - Introdução"
+        title={
+          <>
+            O Código <em className="text-primary">Ancestral</em>
+          </>
+        }
+      >
+        <>
+          <p className="text-lg md:text-2xl text-foreground/75 max-w-3xl leading-relaxed font-serif italic">
+            Quando você pensa em {"algoritmo"} ou {"tecnologia"}, qual é a
+            primeira imagem que vem à sua mente? Laboratórios europeus, linhas
+            de código, a arquitetura de Von Neumann?
+          </p>
+          <p className="mt-6 text-base md:text-lg text-foreground/70 max-w-3xl leading-relaxed">
+            E se a lógica complexa por trás da programação moderna já estivesse
+            sendo aplicada muito antes das placas de silício? Para entender essa
+            revolução, precisamos mudar as lentes através das quais enxergamos o
+            mundo.
+          </p>
+        </>
+      </HeroSection>
 
       <section className="mx-auto max-w-5xl px-5 md:px-8 py-20 md:py-28">
         <Reveal>
@@ -210,7 +198,7 @@ export default function IntroducaoPage() {
           <Reveal>
             <blockquote className="border-l-4 border-primary pl-6 max-w-3xl">
               <p className="font-serif italic text-xl md:text-2xl text-foreground/90 leading-snug">
-            Os fractais são caracterizados pela repetição de padrões
+                Os fractais são caracterizados pela repetição de padrões
                 semelhantes em escalas cada vez menores… aldeias africanas
                 tradicionais normalmente mostram essa característica: círculos
                 de círculos de habitações.
@@ -291,38 +279,12 @@ export default function IntroducaoPage() {
           ))}
         </div>
       </section>
-
-      <section className="relative border-t border-border overflow-hidden">
-        <div className="absolute inset-0 text-primary">
-          <AdinkraPattern opacity={0.05} />
-        </div>
-        <div className="relative mx-auto px-5 md:px-8 py-24 md:py-32 text-center">
-          <Reveal>
-            <p className="text-xs uppercase tracking-[0.4em] text-primary mb-6">
-              Frase
-            </p>
-            <p className="font-serif text-4xl md:text-6xl leading-[1.1] text-balance">
-              O algoritmo não nasceu no Vale do Silício.
-              <br />
-              <em className="text-primary">Ele é ancestral!</em>
-            </p>
-            <div className="mt-12 flex flex-wrap justify-center gap-4">
-              <Link
-                href="/historia"
-                className="inline-flex items-center gap-2 rounded-full bg-primary px-6 py-3 text-sm font-medium text-primary-foreground hover:bg-primary/90 transition"
-              >
-                Continuar roteiro <ArrowRight size={16} />
-              </Link>
-              <Link
-                href="/pratica"
-                className="inline-flex items-center gap-2 rounded-full border border-border px-6 py-3 text-sm font-medium hover:bg-foreground/5 transition"
-              >
-                Brincar com o fractal
-              </Link>
-            </div>
-          </Reveal>
-        </div>
-      </section>
+      <AnchorSection
+        variant={"narrative"}
+        phrase="O algoritmo não nasceu no Vale do Silício."
+        highlight="Ele é ancestral!"
+        nextRoute="/historia"
+      />
     </article>
   );
 }
