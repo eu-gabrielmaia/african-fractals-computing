@@ -132,6 +132,113 @@ const references: Reference[] = [
     link: "https://xaos-project.github.io/XaoSjs/",
     type: "simulador",
   },
+  {
+    id: "matematica-africana-fractais",
+    title: "Matemática no Continente Africano — Fractais",
+    author: "Matemática é Fácil",
+    year: 2016,
+    link: "https://www.matematicaefacil.com.br/2016/07/matematica-continente-africano-fractais.html",
+    type: "site",
+  },
+
+  {
+    id: "maisons-traditionnelles-ghana",
+    title: "Maisons Traditionnelles du Ghana",
+    author: "Maison Monde",
+    year: 2026,
+    link: "https://maison-monde.com/maisons-traditionnelles-ghana/",
+    type: "site",
+  },
+
+  {
+    id: "ba-ila-fractal-village",
+    title: "Social Organization Based on Fractals: Example of a Ba-Ila Village",
+    author: "Dossou Kossi",
+    year: 2026,
+    link: "https://www.linkedin.com/pulse/social-organization-based-fractals-example-ba-ila-village-dossou-6bf1f",
+    type: "livro-artigo",
+  },
+
+  {
+    id: "wfp-sahel-resilience",
+    title: "Integrated Resilience in the Sahel",
+    author: "World Food Programme (WFP)",
+    year: 2026,
+    link: "https://www.wfp.org/publications/integrated-resilience-sahel",
+    type: "site",
+  },
+
+  {
+    id: "unesco-heritage-committee",
+    title: "Intangible Cultural Heritage Committee 2023",
+    author: "UNESCO",
+    year: 2023,
+    link: "https://www.unesco.org/en/intangible-cultural-heritage/committee-2023",
+    type: "site",
+  },
+
+  {
+    id: "rna-sona-onu",
+    title: "UNESCO: Sona posta à consulta pública na ONU",
+    author: "Rádio Nacional de Angola (RNA)",
+    year: 2023,
+    link: "https://rna.ao/rna.ao/2023/09/02/unesco-sona-posta-a-consulta-publica-na-onu/",
+    type: "livro-artigo",
+  },
+
+  {
+    id: "mitos-lendas-pontas-dedos",
+    title: "Mitos e Lendas nas Pontas dos Dedos",
+    author: "Museu Digital Afro-Português",
+    year: 2026,
+    link: "https://museudigitalafroportugues.wordpress.com/diversidade-cultural-e-desenvolvimento/oficina-de-museologia-social/mitos-e-lendas-nas-pontas-dos-dedos/",
+    type: "livro-artigo",
+  },
+
+  {
+    id: "ethnomathematics-digital-era",
+    title: "Art, Ethnomathematics and the Digital Era",
+    author: "Va2Rosa",
+    year: 2026,
+    link: "https://va2rosa.medium.com/art-ethnomathematics-and-the-digital-era-4bc30b0bf634",
+    type: "livro-artigo",
+  },
+
+  {
+    id: "language-of-kente",
+    title: "The Language of Kente Fabric in Context",
+    author: "Explore VC",
+    year: 2026,
+    link: "https://www.explore-vc.org/en/objects/the-language-of-kente-fabric-in-context.html",
+    type: "livro-artigo",
+  },
+
+  {
+    id: "kente-color-meanings",
+    title: "Kente Cloth Color Meanings",
+    author: "Utaknuti Hair Lesson",
+    year: 2026,
+    link: "https://utaknutihairlesson.z21.web.core.windows.net/kente-cloth-color-meanings.html",
+    type: "site",
+  },
+
+  {
+    id: "man-weaning-kente",
+    title: "Man Weaning Kente Cloth",
+    author: "Wikimedia Commons",
+    year: 2026,
+    link: "https://commons.wikimedia.org/wiki/File%3AMan_Weaning_Kente_Cloth.jpg",
+    type: "site",
+  },
+
+  {
+    id: "ghanaian-kente-weaving-video",
+    title: "Learning how to Weave Ghanaian Kente | Ghana Tour",
+    author: "YouTube",
+    year: 2026,
+    link: "https://www.youtube.com/watch?v=RTiBhJ36zLA",
+    type: "video",
+  },
 ];
 
 export default async function ReferenciaPage({
