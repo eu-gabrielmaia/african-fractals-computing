@@ -1,145 +1,276 @@
 import { Metadata } from "next";
 import { Reveal } from "@/components/reveal";
+import { Filter } from "@/components/filter";
+import { GaleriaGrid } from "@/components/sections";
 
 export const metadata: Metadata = {
-  title: "Galeria — Fractais",
+  title: "Galeria — Fractais d'África",
   description:
-    "Arquitetura, arte e objetos que mostram padrões fractais aplicados na prática em diferentes contextos.",
+    "Uma coleção visual de objetos, construções, ilustrações e imagens que revelam a presença dos fractais na cultura africana.",
   openGraph: {
     title: "Galeria — Fractais d'África",
     description:
-      "Uma coleção visual de padrões que revelam repetição, escala e organização no mundo real.",
+      "Explore objetos, arquitetura, arte e ilustrações que mostram a geometria fractal viva na cultura africana.",
   },
 };
 
-type Filter = "todos" | "arquitetura" | "textil" | "arte" | "divinacao";
+export type MediaCategory =
+  | "objetos"
+  | "arquitetura"
+  | "ilustracoes"
+  | "arte"
+  | "texteis";
 
-interface Item {
+export type FilterType = "todos" | MediaCategory;
+
+export const filters = [
+  { id: "todos", label: "Todos" },
+  { id: "objetos", label: "Objetos" },
+  { id: "arquitetura", label: "Arquitetura" },
+  { id: "ilustracoes", label: "Ilustrações" },
+  { id: "arte", label: "Arte" },
+  { id: "texteis", label: "Têxteis" },
+];
+
+export type MediaItem = {
   id: string;
   title: string;
-  culture: string;
-  type: Exclude<Filter, "todos">;
-  short: string;
-  long: string;
-  pattern: string;
-  visual: "sierpinski" | "tree" | "rings" | "weave" | "binary";
-  color: string;
-}
+  description?: string;
+  type: MediaCategory;
+  src: string;
+  aspect?: "portrait" | "landscape" | "square";
+  author?: string;
+  year?: string | number;
+  origin?: string;
+};
 
-const items: Item[] = [
+export const midias: MediaItem[] = [
   {
-    id: "ba-ila",
-    title: "Aldeia Ba-ila",
-    culture: "Zâmbia",
+    id: "logone-birni-aerea",
+    title: "Vista Aérea de Logone-Birni",
+    description:
+      "Fotografia aérea da cidade de Logone-Birni, nos Camarões, mostrando a estrutura fractal retangular dos compostos familiares.",
+    type: "ilustracoes",
+    src: "/images/logone_birni_camaroes_aerea.png",
+    aspect: "landscape",
+    author: "Jacques Jangoux",
+    year: 2006,
+    origin: "Camarões",
+  },
+  {
+    id: "aldeia-nankani-diagrama",
+    title: "Diagrama da Aldeia Nankani",
+    description:
+      "Diagrama da organização circular das casas Nankani em diferentes escalas.",
+    type: "ilustracoes",
+    src: "/images/nankani_aldeia_circular_diagrama.png",
+    aspect: "landscape",
+    origin: "Gana",
+  },
+  {
+    id: "nankani-casa-fachada",
+    title: "Casa Circular Nankani — Fachada",
+    description:
+      "Casa circular tradicional do povo Nankani com cobertura de palha e paredes de adobe.",
     type: "arquitetura",
-    short: "Anel de anéis",
-    long: "Visto do alto, o povoado revela círculos dentro de círculos: famílias, clãs e a casa do chefe — todos repetindo a mesma estrutura em escalas decrescentes.",
-    pattern: "Auto-similaridade em 3 escalas",
-    visual: "rings",
-    color: "oklch(0.55 0.16 35)",
+    src: "/images/nankani_casa_circular_gana_1.png",
+    aspect: "landscape",
+    origin: "Gana",
   },
   {
-    id: "mokoulek",
-    title: "Mokoulek",
-    culture: "Camarões",
+    id: "nankani-casa-entrada",
+    title: "Casa Circular Nankani — Entrada",
+    description:
+      "Entrada de uma casa circular Nankani com padrões geométricos pintados.",
     type: "arquitetura",
-    short: "Cercados recursivos",
-    long: "Retângulos contendo retângulos contendo retângulos. Cada nível tem função social — uma planta urbana que é, literalmente, recursão.",
-    pattern: "Recursão retangular",
-    visual: "sierpinski",
-    color: "oklch(0.55 0.16 35)",
+    src: "/images/nankani_casa_circular_gana_2.png",
+    aspect: "landscape",
+    origin: "Gana",
   },
   {
-    id: "kente",
-    title: "Pano Kente",
-    culture: "Gana — Asante",
-    type: "textil",
-    short: "Tecelagem modular",
-    long: "Faixas de tecido com motivos que se repetem em escalas e cores. O pano inteiro é um mosaico auto-similar de provérbios e histórias.",
-    pattern: "Repetição modular escalar",
-    visual: "weave",
-    color: "oklch(0.78 0.13 85)",
+    id: "placa-recursiva",
+    title: "Placa Decorativa com Padrão Recursivo",
+    description:
+      "Objeto decorativo em madeira com entalhes geométricos repetitivos.",
+    type: "objetos",
+    src: "/images/objeto_placa_decorativa_angola.png",
+    aspect: "landscape",
+    origin: "Angola",
   },
   {
-    id: "bogolan",
-    title: "Bogolanfini",
-    culture: "Mali — Bamana",
-    type: "textil",
-    short: "Tinta de lama",
-    long: "Padrões geométricos pintados com lama fermentada, organizados em grades onde cada célula contém variações da mesma estrutura.",
-    pattern: "Tesselagem variacional",
-    visual: "weave",
-    color: "oklch(0.32 0.09 270)",
+    id: "colar-dentes",
+    title: "Colar de Dentes com Fio Colorido",
+    description:
+      "Adorno cultural composto por dentes organizados em padrão repetitivo.",
+    type: "objetos",
+    src: "/images/objeto_colar_dentes_angola.png",
+    aspect: "landscape",
+    origin: "África",
   },
   {
-    id: "mangbetu",
-    title: "Penteado Mangbetu",
-    culture: "RDC — Mangbetu",
+    id: "escultura-madeira",
+    title: "Peça Esculpida em Madeira",
+    description:
+      "Escultura em madeira com padrões geométricos entalhados.",
+    type: "objetos",
+    src: "/images/objeto_escultura_madeira_angola.png",
+    aspect: "square",
+    origin: "África",
+  },
+  {
+    id: "sona-areia-1",
+    title: "Sona — Desenho na Areia",
+    description:
+      "Desenho Sona traçado na areia pelo povo Tchokwe.",
     type: "arte",
-    short: "Tranças em árvore",
-    long: "Tranças que se subdividem em tranças menores, formando uma estrutura arbórea — a mesma topologia de uma árvore fractal.",
-    pattern: "Ramificação binária",
-    visual: "tree",
-    color: "oklch(0.22 0.015 50)",
+    src: "/images/sona_angola_areia_1.png",
+    aspect: "landscape",
+    origin: "Angola",
   },
   {
-    id: "mascara",
-    title: "Máscara cerimonial",
-    culture: "África Ocidental",
+    id: "sona-areia-2",
+    title: "Sona — Traçado Complexo",
+    description:
+      "Exemplo avançado de desenho Sona com traçado contínuo.",
     type: "arte",
-    short: "Ornamento auto-similar",
-    long: "Os ornamentos da máscara repetem, em miniatura, o contorno geral do rosto esculpido — uma assinatura recursiva.",
-    pattern: "Reflexo de escala",
-    visual: "sierpinski",
-    color: "oklch(0.55 0.16 35)",
+    src: "/images/sona_angola_areia_2.png",
+    aspect: "landscape",
+    origin: "Angola",
   },
   {
-    id: "areia",
-    title: "Divinação na areia",
-    culture: "Mali — Bamana",
-    type: "divinacao",
-    short: "Algoritmo binário",
-    long: "Quatro linhas traçadas; pares contados; símbolos gerados; recombinados recursivamente. O sistema chegou à Europa medieval e plantou as raízes do binário.",
-    pattern: "Árvore de decisão recursiva",
-    visual: "binary",
-    color: "oklch(0.32 0.09 270)",
+    id: "sona-etnomatematica",
+    title: "Padrões Sona — Etnomatemática",
+    description:
+      "Coleção de padrões algorítmicos organizados pela etnomatemática.",
+    type: "ilustracoes",
+    src: "/images/sona_angola_padroes_etnomatematica.png",
+    aspect: "landscape",
+    origin: "Angola",
   },
   {
-    id: "ifa",
-    title: "Tabuleiro de Ifá",
-    culture: "Nigéria — Iorubá",
-    type: "divinacao",
-    short: "Combinatória sagrada",
-    long: "256 odus, gerados pela combinação recursiva de 16 figuras. Um sistema de classificação que antecipou a estrutura de um banco de dados em árvore.",
-    pattern: "Combinatória 4 bits × 4 bits",
-    visual: "binary",
-    color: "oklch(0.78 0.13 85)",
+    id: "sahel-paraventos-1",
+    title: "Para-ventos Fractais do Sahel",
+    description:
+      "Estruturas de palha construídas em padrão fractal para proteção agrícola.",
+    type: "ilustracoes",
+    src: "/images/sahel_paraventos_palha_aerea.png",
+    aspect: "portrait",
+    origin: "Sahel, África Ocidental",
+  },
+  {
+    id: "sahel-paraventos-2",
+    title: "Para-ventos do Sahel — Vista Aérea",
+    description:
+      "Vista aérea da repetição estrutural dos para-ventos do Sahel.",
+    type: "arquitetura",
+    src: "/images/sahel_paraventos_vista_aerea_2.png",
+    aspect: "portrait",
+    origin: "Sahel, África Ocidental",
+  },
+  {
+    id: "kente-padrao-1",
+    title: "Tecido Kente — Padrão 1",
+    description:
+      "Tecido Kente com padrões geométricos repetidos.",
+    type: "texteis",
+    src: "/images/kente_tecido_padrao_1.png",
+    aspect: "portrait",
+    origin: "Gana",
+  },
+  {
+    id: "kente-padrao-2",
+    title: "Tecido Kente — Padrão 2",
+    description:
+      "Kente com triângulos coloridos e simetria geométrica.",
+    type: "texteis",
+    src: "/images/kente_tecido_padrao_2.png",
+    aspect: "landscape",
+    origin: "Gana",
+  },
+  {
+    id: "kente-padrao-3",
+    title: "Tecido Kente — Padrão 3",
+    description:
+      "Faixas geométricas organizadas em repetição modular.",
+    type: "texteis",
+    src: "/images/kente_tecido_padrao_3.png",
+    aspect: "landscape",
+    origin: "Gana",
+  },
+  {
+    id: "kente-padrao-4",
+    title: "Tecido Kente — Padrão 4",
+    description:
+      "Peça Kente com zigue-zagues e blocos coloridos.",
+    type: "texteis",
+    src: "/images/kente_tecido_padrao_4.png",
+    aspect: "landscape",
+    origin: "Gana",
+  },
+  {
+    id: "kente-padrao-5",
+    title: "Tecido Kente — Padrão 5",
+    description:
+      "Conjunto de tecidos Kente organizados em padrões variados.",
+    type: "texteis",
+    src: "/images/kente_tecido_padrao_5.png",
+    aspect: "landscape",
+    origin: "Gana",
+  },
+  {
+    id: "tecelao-kente",
+    title: "Tecelão Fabricando Tecido Kente",
+    description:
+      "Tecelão utilizando tear tradicional para produzir tecido Kente.",
+    type: "texteis",
+    src: "/images/kente_tecelao_fabricando_2017.png",
+    aspect: "portrait",
+    year: 2017,
+    origin: "Gana",
+    author: "Wikimedia Commons",
   },
 ];
 
-const filters: { id: Filter; label: string }[] = [
-  { id: "todos", label: "Todos" },
-  { id: "arquitetura", label: "Arquitetura" },
-  { id: "textil", label: "Têxtil" },
-  { id: "arte", label: "Arte" },
-  { id: "divinacao", label: "Divinação" },
-];
+export default async function GaleriaPage({
+  searchParams,
+}: {
+  searchParams: Promise<{ type?: string }>;
+}) {
+  const params = await searchParams;
+  const activeFilter: FilterType = (params.type as FilterType) || "todos";
 
-export default function GaleriaPage() {
+  const filtered =
+    activeFilter === "todos"
+      ? midias
+      : midias.filter((m) => m.type === activeFilter);
+
   return (
-    <article className="mx-auto max-w-6xl px-5 md:px-8 py-16 md:py-24">
+    <article className="mx-auto max-w-7xl px-5 md:px-8 py-16 md:py-24">
       <Reveal>
         <p className="text-xs uppercase tracking-[0.3em] text-primary mb-4">
           Galeria
         </p>
         <h1 className="font-serif text-5xl md:text-7xl leading-none tracking-tight text-balance max-w-4xl mb-8">
-          O padrão visto de perto
+          O fractal em imagem
         </h1>
         <p className="text-lg md:text-xl text-foreground/75 max-w-3xl leading-relaxed mb-16">
-          Arquitetura, tecidos e objetos revelam como esses padrões aparecem na
-          prática. Explore exemplos visuais diretos.
+          Objetos, construções, têxteis e arte que revelam como a geometria
+          fractal permeia a cultura africana — do micro ao macro, do detalhe ao
+          todo.
         </p>
       </Reveal>
+      <section>
+        <Filter filters={filters} paramKey="type" />
+
+        {filtered.length === 0 ? (
+          <div className="text-center py-24 text-foreground/60">
+            <p className="text-lg">Nenhuma mídia encontrada</p>
+            <p className="text-sm mt-2">Tente selecionar outra categoria.</p>
+          </div>
+        ) : (
+          <GaleriaGrid items={filtered} />
+        )}
+      </section>
     </article>
   );
 }
