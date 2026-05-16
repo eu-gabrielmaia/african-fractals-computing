@@ -3,13 +3,13 @@ import { Sierpinski } from "./backgrounds";
 
 const links = [
   { href: "/introducao", label: "Introdução" },
-  { href: "/historia", label: "História & Origens" },
+  { href: "/historia", label: "História" },
   { href: "/contextualizacao", label: "Contextualização" },
   { href: "/computacao", label: "Relação com a Computação" },
   { href: "/linha-do-tempo", label: "Linha do Tempo" },
   { href: "/galeria", label: "Galeria" },
   { href: "/pratica", label: "Explorar na prática" },
-  { href: "/referencias", label: "Notas & Referências" },
+  { href: "/referencias", label: "Referências" },
 ];
 
 export function Footer() {
