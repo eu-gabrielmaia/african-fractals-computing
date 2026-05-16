@@ -1,7 +1,7 @@
 import { ImageIcon } from "lucide-react";
 
 interface ImagePlaceholderProps{
-  caption: string;
+  caption?: string;
   alt: string;
 }
 
@@ -16,9 +16,11 @@ export default function ImagePlaceholder({ caption, alt }:ImagePlaceholderProps)
         <ImageIcon size={42} strokeWidth={1.2} />
         <span className="mt-3 text-xs uppercase tracking-[0.3em]">Espaço para imagem</span>
       </div>
-      <figcaption className="mt-3 text-sm text-foreground/65 text-center italic">
-        {caption}
-      </figcaption>
+      {caption && (
+        <figcaption className="mt-3 text-sm text-foreground/65 text-center italic">
+          {caption}
+        </figcaption>
+      )}
     </figure>
   );
 }
