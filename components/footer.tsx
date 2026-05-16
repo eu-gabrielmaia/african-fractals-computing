@@ -28,8 +28,7 @@ export function Footer() {
             <span className="font-serif text-xl">Fractais África</span>
           </div>
           <p className="text-sm opacity-75 leading-relaxed">
-            Um arquivo vivo da geometria fractal africana e seu eco no coração
-            da computação moderna.
+            Muito antes de existir computador, pessoas já organizavam aldeias, criavam tecidos e representavam ideias usando padrões que se repetem.
           </p>
         </div>
 
